@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title> TECH INTERN DAY2 LEARNING </title>
+        <link rel="stylesheet" type="text/css" href="./css/tech_intern_day2.1.css">
+    </head>
+    <body class="main">
+        <h1> Register Here </h1>
+        <div id="container">
+            <form action="process.php" method="POST"> <!--action is script
+                 or file where you want to send the form and method is what u want to 
+                do with the form-->
+                <ul>
+                    <li>
+                        <label> First Name: </label>
+                        <input type="text" name="First Name"/><!--For a <form> element, 
+                            the name attribute is  used as a reference when 
+                            the data is submitted.-->
+                        <br/>
+                        <label> Last Name: </label>
+                        <input type="text" name="Last Name"/>
+                        <br/>
+                        <label> Email: </label>
+                        <input type="email" name="Email"/>
+                        <br/>
+                        <label> Favourite Food: </label>
+                        <select name="Food">
+                            <option value="Pizza"> Pizza </option> <!-- value attribute, 
+                        which indicates what is sent to the server on form submission.-->
+                            <option value="Burger"> Burger </option>
+                            <option value="Biryani"> Biryani </option>
+                        </select>
+                        <br/>
+                        <label> Gender: </label>
+                        <input type="radio" name="Gender" value="Male"/> Male
+                        &nbsp;
+                        <!-- &nbsp; to get input next to each other-->
+                        <input type="radio" name="Gender" value="Female"/> Female
+                        <br/> <br/>
+                        <label> Message: </label>
+                        <textarea name="Message"></textarea>
+                        <br/> <br/>
+                        <input type="submit" value="Register"/>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+    </body>
+</html>

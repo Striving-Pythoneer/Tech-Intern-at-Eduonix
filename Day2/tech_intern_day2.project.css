@@ -1,0 +1,149 @@
+body{
+    background: url(../images/texture.jpg) repeat; 
+    /* repeat will repeat your img both in x and y direction*/
+    font-family: Georgia;
+    font-size: 15px;
+}
+
+strong{
+    font-weight: bold;}
+.clr{clear: both;}
+/*The clear property specifies on which sides of 
+an element floating elements are not allowed to float.*/
+
+h1{
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h3{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: 21px;
+}
+
+#container{
+    width: 930px;
+    margin: 50px auto 10px auto;
+    padding: 20px 30px;
+    border-top: steelblue solid 6px;
+    border-bottom: steelblue solid 3px;
+    background: wheat;
+}
+
+#header{
+    padding: 10px 0;
+    border-bottom: steelblue dotted 2px;
+    overflow: hidden;
+    /* overflow property controls what happens to content that is too
+     big to fit into an area.*/ 
+}
+
+#header #name{
+    float: left;
+    /* The float property is used for positioning and formatting content
+     e.g. let an image float left to the text in a container.*/ 
+}
+
+#header #contact{
+    float: right;
+}
+
+.row{
+    padding: 30px 0;
+    font-size: 20px;
+    overflow: hidden;
+    border-bottom: steelblue dotted 2px;
+}
+
+h2.left{
+    float: left;
+    width: 140px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#profile p{
+    float: right;
+    width: 700px;
+    text-align: justify;
+}
+
+#skills ul{
+    float: right;
+    width: 700px;
+}
+
+#skills ul li{
+    float: left;
+    width: 180px;
+    padding: 0 40px 0 0;
+    font-size: 16px;
+}
+
+#skills ul li h2{
+    font-weight: bold;
+}
+
+#skills ul li p{
+    text-align: left;
+}
+#technical table{
+    float: right;
+    width: 700px;
+}
+
+#technical table td{
+    width: 100px;
+    border-bottom:steelblue solid 1px;
+    padding: 5px;
+}
+
+#experience div{
+    float: right;
+    width: 700px;
+    border-bottom: steelblue solid 1px;
+    padding: 10px 0;
+}
+
+#experience div h3, #education{
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.6em; 
+    /* em - Relative to the font-size of the element
+     (2em means 2 times the size of the current font)*/
+}
+
+#experience div h4{
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6em;
+}
+
+#experience div p{
+    font-size: 15px;
+    line-height: 1.6em;
+    text-align: justify;
+}
+
+#education div{
+    float: right;
+    width: 700px;
+    padding: 10px 0;
+}
+
+#education div h3{
+    font-style: normal;
+    font-size:  18px;
+    line-height: 1.6em;
+}
+
+#education div p{
+    font-size: 16px;
+}
+#footer{
+    text-align: center;
+    margin-bottom: 10px;
+}
