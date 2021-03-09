@@ -1,0 +1,28 @@
+body{
+    background-color:lavenderblush;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.main h1{
+    color: red;
+}
+
+#container{
+    width: 460px;
+    margin: auto; /* this will move the content in centre automatically. it has its own 
+    spacing at top*/
+    border: 1px solid #cccccc; /*gives border to the content of body*/
+    padding: 0 20px 20px 20px; /*create space between border and content 
+    you can give one value or specific value for top right bottom left resp*/
+    border-radius: 10px;
+    text-align: center;
+    background: white; /* container bg is white */
+}
+
+img{
+    border: darkgray 1px solid;
+    padding: 6px;
+    width: 450px;
+    height: 300px;
+}
