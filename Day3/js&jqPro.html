@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            MY FIRST JS AND JQ PROJECT
+        </title>
+        <link rel="stylesheet" href="js&jqPro.css" type="text/css" />
+        <script src="jquery.js" type="text/javascript"></script>
+        <script src="js&jqAnimationPro.js" type="text/javascript"></script>
+        <script src="js&jqValidationPro.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <form name="myform" onsubmit="return validationForm()">
+        <!-- on submit will call javascript file----
+            We are returning validation with the help of javascript-->
+        <ul>
+            <li class="title"> Who are you? </li>
+            <li class="fields">
+                <label> *First Name: </label> <br/>
+                <input id="first name" class="req" type="text"/> <br/>
+                <label> *Middle Name: </label> <br/>
+                <input id="middle name" class="req" type="text"/> <br/>
+                <label> *Last Name: </label> <br/>
+                <input id="last name" class="req" type="text"/> <br/>
+                <label> *Email: </label> <br/>
+                <input id="email" class="req" type="email"/> <br/>
+            </li>
+
+            <li class="title"> Where Are You From? </li>
+            <li class="fields">
+                <label> City: </label> <br/>
+                <input id="city" type="text"/> <br/>
+                <label> *State: </label> <br/>
+                <input id="state" class="req" type="text"/> <br/>
+                <label> Country: </label> <br/>
+                <input id="country" type="text"/> <br/>
+            </li>
+
+            <li class="title"> What do you do? </li>
+            <li class="fields">
+                <label> *Occupation: </label> <br/>
+                <input id="occupation" class="req" type="text"/> <br/>
+                <label> Company: </label> <br/>
+                <input id="company" type="text"/> <br/>
+                <label> Company Location: </label> <br/>
+                <input id="company location" type="text"/> <br/>
+            </li>
+        </ul>
+        <input type="submit" value="Submit Form" />
+        </form>
+    </body>
+</html>

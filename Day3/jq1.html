@@ -1,0 +1,41 @@
+<html>
+    <head> 
+        <title> JQUERY 1 </title>
+        <script type="text/javascript" src="jquery.js"> </script>
+        <style>
+            .red{color:red}
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                // without loading the h1 tag it won't add class so we have 
+                //this function
+                $('h1').addClass('red');
+                $('h1.myclass').html('This heading is from Jquery');
+                //single out 1 header class and do the changes in that
+                //if we don't give class all the tag with same name will change
+                $('button').click(function(){ 
+                    $('h1.myclass1').html('ChangeText').slideUp(500);
+                    $('h1.myclass1').html('ChangeText').slideDown(500);
+                    //$('h1.myclass1').html('ChangeText').slideToggle(200);
+                    //inside bracket is toggle speed as well change text
+                    $('h2').html('Jquery changed the text when button is clicked as well we changed header1');
+                    //when button is click --- event
+                });
+                
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1 class="myclass1"> MY FIRST JQUERY </h1>
+        <!--<script>
+            $('h1').addClass('red')
+        </script>--> 
+        <!-- Its not good to have jquery in your body tag-->
+        <h1 class="myclass"> This changes with jquery </h1>
+        <button> Slide Up & Down & change text </button>
+        <h2> This is the text to change </h2>
+    </body>
+
+</html>

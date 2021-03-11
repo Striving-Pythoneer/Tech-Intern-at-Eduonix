@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            JAVASCRIPT EVENTS
+        </title>
+        <script>
+            
+            function sayHi(){
+                alert("Hello from the other side");
+            }
+            function changeMe(){
+                var heading = document.getElementById('heading');
+                heading.innerHTML = "No Kidding"
+            }
+            function changeMeBack(){
+                var heading = document.getElementById('heading');
+                heading.innerHTML = "This is a page heading"
+            }
+            
+            function focusIn(){
+                var one = document.getElementsByClassName('one')[0];
+                one.innerHTML = "Its focused on you"                
+            }
+
+            function blurOut(){
+                var two = document.getElementsByClassName('two')[0];
+                two.innerHTML = "Its out of focus"
+            } 
+
+        </script>
+    </head>
+    <body onload="return sayHi()">
+    
+        <h1 id="heading" onmouseover="return changeMe()" onmouseout="return changeMeBack()">
+             This is a Page </h1>
+
+        <form>
+            Name: <input onfocus="return focusIn()" onblur="return blurOut()" type="text" name="name"/> 
+            <br/> <br/>
+            <span class="one"> on focus change me</span>
+            <br/>
+            <span class="two"> when not in focus change me</span>
+            <!--<p> you can do the same with id </p>-->
+            <br/>
+            <button onclick="return sayHi()"> Click Me!!! </button>
+        </form>
+
+    </body>
+</html>
