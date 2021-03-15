@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DICTIONARY USING API </title>
+    <link rel="stylesheet" type="text/css" href="dictionary.css" />
+    <script>
+        let search;
+        let container;
+        let partOfSpeech;
+        let definition;
+        let example;
+        let partOfSpeech2;
+        let definition2;
+        let example2;
+        
+
+        window.onload = () => {
+            search = document.querySelector(".search-bar")
+            container = document.querySelector(".container");
+            partOfSpeech = document.querySelector(".partOfSpeech");
+            definition = document.querySelector(".definition");
+            example = document.querySelector(".example");
+            partOfSpeech2 = document.querySelector(".partOfSpeech2");
+            definition2 = document.querySelector(".definition2");
+            example2 = document.querySelector(".example2");
+        }
+        //connecting HTML TO java script
+
+        function fetchDefinition() {
+            const word = search.value.toLowerCase();
+            
+            //.value returns what you have type in search bar
+            fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`)
+            //fetching english word data from api
+                .then(res => res.json())
+                //response is convert data into json format
+                .then(res => {
+                    console.log(res[0].meanings[1].definitions[1].example)
+                    partOfSpeech.innerText = res[0].meanings[0].partOfSpeech//noun
+                    definition.innerText = res[0].meanings[0].definitions[0].definition
+                    example.innerText = res[0].meanings[0].definitions[0].example
+
+                    partOfSpeech2.innerText = res[0].meanings[1].partOfSpeech//adjective / exclamation
+                    definition2.innerText = res[0].meanings[1].definitions[1].definition
+                    example2.innerText = res[0].meanings[1].definitions[1].example
+                })
+
+                .catch(err => {
+                    console.log(err)
+                    definition.innerText = "The word is not defined in our dictionary or Check for spellings and try again"
+                    partOfSpeech.innerText = "Error"
+                    example.innerText = ""
+                    definition2.innerText = "The word is not defined in our dictionary or Check for spellings and try again"
+                    partOfSpeech2.innerText = "Error"
+                    example2.innerText = ""
+                })
+
+
+        }
+            
+    </script>
+</head>
+<body>
+    <div style="width:25%; margin:0 auto;">
+        <img class="image" src="dict.jpeg" alt="sample image"/>
+        <span class="head"> DICTIONARY </span>
+        <form class="form" onsubmit="fetchDefinition(); return false">
+            <input class="search-bar" name="search" type="text"/>
+            <input class="submit-button" name="submit" type="submit"/>
+        </form>
+
+    </div>
+
+    <br/><br/>
+
+    <div id="container">
+        <div class="partOfSpeech"></div>
+        <div class="definition"> The defination of word will appear here...</div>
+        <div class="example"></div>
+        <br/> <br/> <br/> <br/>
+        <div class="partOfSpeech2"></div>
+        <div class="definition2"> The defination of word will appear here...</div>
+        <div class="example2"></div>
+    </div>
+
+    <div id="footer">
+        Definition courtesy of <a href="http://www.lexico.com" target="_blank">lexico.com</a> | A project by SHIFA SHAIKH            
+    </div>
+    
+    
+</body>
+</html>
