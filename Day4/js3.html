@@ -1,0 +1,104 @@
+<!--shortcut - "type doc then press tab button"-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascript Fundamentals 3 & DOM </title>
+
+    <script>
+        function formatMD(x){
+            const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+            //console.log(x)
+            //var month = x .getMonth();
+            //var day = x .getDate();
+            //month = monthNames[month]
+            //console.log(day);
+            //console.log(month);
+            var splitData = x.split("-")
+            var day = splitData[0];
+            var month = parseInt(splitData[1])-1;
+            month = monthNames[month]
+            var year = splitData[2];
+            return `Month: ${month} Day: ${day}`;
+        }
+
+    
+        const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+        const peeps = [
+           {
+               "firstName" : "Shifa",
+               "LastName" : "Shaikh",
+               "Birthday" : formatMD('24-07-1998'),
+           }, 
+           {
+               "firstName" : "Misbah",
+               "LastName" : "Shaikh",
+               "Birthday" : formatMD('09-05-1997'),
+           }, 
+           {
+               "firstName" : "Ifrah",
+               "LastName" : "Khedekar",
+               "Birthday" : formatMD('18-10-1996'),
+           } 
+        ];
+
+        const peopleElements = peeps.map((people) => {
+            const attributeList = document.createElement("ul");
+            const firstNameElement = document.createElement("li");
+            const LastNameElement = document.createElement("li");
+            const birthdayElement = document.createElement("li");
+
+            firstNameElement.innerText = `First Name: ${people.firstName}`;
+            LastNameElement.innerText = `Last Name: ${people.LastName}`;
+            birthdayElement.innerText = `Birthday: ${people.Birthday}`;
+
+            attributeList.appendChild(firstNameElement);
+            attributeList.appendChild(LastNameElement);
+            attributeList.appendChild(birthdayElement);
+
+            return attributeList
+
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const container = document.querySelector('.container');
+            peopleElements.forEach(val => container.appendChild(val))
+                
+        });
+
+        // DOM EVENT HANDLING
+        let counter = 0;
+        const amounts = ['once', 'twice', 'three times', 'four times', 'five times', 'Stop Bro!'];
+
+        window.onload = () => {
+            let container = document.querySelector('.container');
+        // window.onload - By default, it is fired when the entire page loads,
+        // including its content (images, CSS, scripts, etc.).
+        // document.onload - It is called when the DOM is ready which can be prior to 
+        //images and other external content is loaded.
+            let button = document.querySelector('button');
+        //The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+
+            button.addEventListener("click", () => {
+                const notification = document.createElement('div');
+                notification.innerText = `Button pressed ${amounts[counter] || `${counter} times you can go on!! ^.^`}`
+
+                counter++;
+                container.appendChild(notification);
+            });
+            //The document.addEventListener() method attaches an event handler to the document.
+            //short circiting using ||
+        }
+        
+      
+    
+    </script>
+</head>
+<body>
+    <button> Click Me! </button>
+    <div class="container"></div>
+    <script src="js3.js"></script>
+    
+</body>
+</html>
