@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE movies SYSTEM "movies.dtd">
+<movies> 
+    <movie>
+        <title> The Lion King </title>
+        <year> 1964 </year>
+        <genre> Fantasy </genre>
+        <director> XYZ </director>
+    </movie>
+
+    <movie>
+        <title> COCO </title>
+        <year> 2017 </year>
+        <genre> Animation </genre>
+        <director> Chocolatte </director>
+    </movie>
+
+    <movie>
+        <title> The Boss Baby</title>
+        <year> 2019 </year>
+        <genre> Comedy </genre>
+        <director> Shifa Shaikh </director>
+    </movie>
+
+    <movie>
+        <title> Storks </title>
+        <year> 2010 </year>
+        <genre> Drama </genre>
+        <director> Robert Dysliva </director>
+    </movie>
+
+    <movie>
+        <title> Go Gone </title>
+        <year> 2000 </year>
+        <genre> Horror </genre>
+        <director> Bhattt </director>
+    </movie>
+
+</movies>
