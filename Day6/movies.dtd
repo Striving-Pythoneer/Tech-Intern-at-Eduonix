@@ -1,0 +1,6 @@
+<!ELEMENT movies (movie) >
+<!ELEMENT movie (title, year, genre, director) >
+<!ELEMENT title (#PCDATA) >
+<!ELEMENT year (#PCDATA) >
+<!ELEMENT genre (#PCDATA) >
+<!ELEMENT director (#PCDATA) >
